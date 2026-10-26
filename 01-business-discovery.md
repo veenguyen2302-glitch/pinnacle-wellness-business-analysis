@@ -25,15 +25,19 @@ This is an information-continuity and coordination challenge—not simply a lack
 
 ## 4. Key Stakeholders & Needs
 
-| Stakeholder | Need |
+| Stakeholder | Key Business Need |
 |---|---|
-| Guests | Convenient, trustworthy personalisation. |
-| Resort Operations Manager | Reliable operational information and workable scheduling. |
-| Chief Wellness Officer / wellness professionals | Accurate context and protected professional judgement. |
-| Head Nutritionist | Clear dietary and allergy information. |
-| Sarah Chen (Guest Experience and Innovation) | Alignment of service quality, scope and expected value. |
+| **Sarah Chen – Head of Guest Experience & Innovation** | Strategic alignment, clear project scope and measurable business value. |
+| **Resort Operations Manager** | Reliable operational information and efficient service coordination. |
+| **Chief Wellness Officer** | Accurate wellness information, service quality and professional oversight. |
+| **Head Nutritionist** | Accurate dietary, allergy and nutritional information for appropriate decisions. |
+| **Wellness Professionals** | Relevant guest information, practical workflows and professional discretion. |
+| **Booking & Guest-Service Staff*** | Clear booking information, usable processes and appropriate data access. |
+| **Guests** | Seamless personalised experiences, accurate information and privacy protection. |
 
-**Scope distinction:** A1's formal stakeholder mapping and engagement plan address a **proposed operational analytics query tool**. They are not evidence of actual interviews or validated requirements for the later app.
+**Stakeholder Analysis:** Assessed stakeholder needs, risks, influence and importance, and developed a proposed engagement plan.
+
+**Scope & Assumptions:** The original stakeholder analysis focused on an operational analytics query tool. Booking and guest-service staff were identified as an assumed stakeholder group. Technology/data governance, delivery partners and the loyalty provider were considered separately as assumed or conditional dependencies. No actual stakeholder interviews were conducted.
 
 ## 5. Business Objectives
 
