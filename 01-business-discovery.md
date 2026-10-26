@@ -12,16 +12,17 @@ Pinnacle Wellness Resort is a fictional five-star Melbourne retreat combining ac
 
 This is an information-continuity and coordination challenge—not simply a lack of technology. Specialist judgement is a competitive strength to preserve.
 
+
 ## 3. Problem Analysis
 
-| Layer | Observation | Potential consequence |
+| Layer | Observation | Potential Business Impact |
 |---|---|---|
-| Underlying condition | Guest health preferences, dietary records and treatment histories are siloed. | Inconsistent information access across services. |
-| Underlying condition | Treatments depend on appointments and specialist availability. | Scheduling and capacity-planning complexity. |
-| Operational challenge | Teams require relevant information and capacity visibility. | Risk of service-coordination gaps. |
-| Guest-facing risk | Guests expect joined-up, personalised interactions. | Potential inconvenience or inconsistent experiences. |
+| Underlying condition | Guest health preferences, dietary records and treatment histories are fragmented across disconnected systems. | Inconsistent information access across services. |
+| Underlying condition | Variable treatment demand and complex coordination of specialist availability create capacity-planning challenges. | Potential scheduling conflicts and inefficient resource utilisation. |
+| Operational challenge | Teams require reliable guest information and visibility of specialist capacity to coordinate services effectively. | Risk of service delays and coordination gaps. |
+| Guest-facing risk | Guests expect seamless, personalised interactions across their wellness journey. | Potential inconvenience and inconsistent guest experiences. |
 
-**Evidence boundary:** Fragmentation and scheduling complexity are documented. Repeated guest data entry, excessive manual checking and actual double-bookings are **unverified hypotheses**, not established incidents. A3 models an incomplete-profile exception; it does not demonstrate that guest records are generally incomplete.
+**Evidence boundary:** Information fragmentation and scheduling complexity are documented in the case study. Repeated guest data entry, excessive manual checking and actual double-bookings remain unverified hypotheses. A3 models incomplete guest profiles as an exception, not a confirmed widespread problem.
 
 ## 4. Key Stakeholders & Needs
 
@@ -39,19 +40,27 @@ This is an information-continuity and coordination challenge—not simply a lack
 
 **Scope & Assumptions:** The original stakeholder analysis focused on an operational analytics query tool. Booking and guest-service staff were identified as an assumed stakeholder group. Technology/data governance, delivery partners and the loyalty provider were considered separately as assumed or conditional dependencies. No actual stakeholder interviews were conducted.
 
+
 ## 5. Business Objectives
 
-| Solution-neutral objective | Proposed measure |
+| Business Objective | Proposed KPI |
 |---|---|
-| Improve guest information continuity. | Completeness of required information; information-related service issues. |
-| Improve treatment scheduling and coordination. | Scheduling conflicts; therapist utilisation; waiting times. |
-| Support consistent personalised experiences. | Schedule-confirmation completion; guest satisfaction. |
+| **BO1. Improve Guest Information Continuity** | Availability of required guest information across authorised service functions. |
+| **BO2. Improve Treatment Scheduling Efficiency** | Scheduling conflict rate; therapist capacity utilisation. |
+| **BO3. Improve Personalised Guest Experience** | Guest satisfaction; information-related service issues. |
 
-*These are proposed KPIs; no baseline, target or realised benefit has been verified.*
+**Measurement note:** These KPIs are proposed indicators for evaluating future improvements. No operational baselines, performance targets or realised benefits have been verified.
+
 
 ## 6. My BA Contribution
 
-I completed BACCM problem-space analysis and a mind map, separating context, needs, stakeholders, value and change. I analysed stakeholder influence, importance, risks and engagement priorities for the analytics-tool initiative. I identified privacy, usability and specialist oversight as decision constraints.
+I used BACCM and problem-space analysis to examine the relationships between business needs, stakeholders, operational constraints and expected value.
+
+My analysis identified **information continuity and service coordination** as the central challenges, rather than technology adoption alone.
+
+I also assessed stakeholder influence, importance and engagement priorities for a proposed operational analytics tool, highlighting the need to balance information accessibility, privacy, operational practicality and specialist judgement.
+
+These findings provided a structured basis for evaluating potential digital and analytics solutions.
 
 ## 7. Transition to Solution Evaluation
 
