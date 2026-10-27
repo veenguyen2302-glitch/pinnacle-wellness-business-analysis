@@ -4,6 +4,28 @@
 **Status:** Proposed strategic and analytics recommendations; not approved investments or implemented solutions.  
 **Previous stage:** [01 — Business Discovery](01-business-discovery.md)
 
+### Solution Evaluation & Decision Flow
+
+```mermaid
+flowchart TB
+    A["Stage 1: Business Problem<br/>Fragmented information & scheduling complexity"]
+
+    A --> B["Stage 2: Evaluate Business Opportunities"]
+
+    B --> C["A1: Digital Strategy Evaluation"]
+    B --> D["A2: Analytics Opportunity Evaluation"]
+
+    C --> E["Recommended Strategy:<br/>Specialist-Led AI Personalisation"]
+    D --> F["Prioritised Analytics Initiative:<br/>Treatment Demand & Therapist Capacity Forecasting"]
+
+    E --> G["Feasibility Gates:<br/>Data readiness, privacy, specialist oversight & operational feasibility"]
+    F --> G
+
+    G --> H["Stage 3: Requirements Analysis<br/>Separate solution workstreams"]
+```
+
+*The two recommendations address different business priorities. Both remain proposals subject to feasibility validation, not approved or implemented solutions.*
+
 ## 1. Business Decision Context
 
 Stage 1 established one challenge: **fragmented guest information and difficult coordination between personalised treatment demand and specialist capacity**. Pinnacle needed to prioritise investment without weakening specialist-led service.
