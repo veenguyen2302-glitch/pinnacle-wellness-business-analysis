@@ -78,14 +78,25 @@ A2 compared three initiatives for value, problem fit, data availability, complex
 | **BO2 — Scheduling efficiency** | BP2 could improve demand and capacity planning. | Forecasting does **not** guarantee live availability or booking confirmation. |
 | **BO3 — Personalised experience** | A1's specialist-led direction could improve relevance and consistency. | Recommendation quality and specialist workload remain untested. |
 
+
 ## 5. Feasibility, Risks & Decision Gates
 
-Before funding or piloting, validate **data readiness**, privacy/consent, access controls, specialist oversight, workflow feasibility, cost and BO1–BO3 baselines.
+**Strategic personalisation:** Before piloting, assess guest-data readiness, consent, privacy controls, specialist review requirements and operational workload.
 
-**Proposed next decision:** Progress **BP2** to detailed requirements; retain **personalisation** for pilot consideration. Feasibility gates are **portfolio refinements**, not completed checks.
+**Demand and capacity forecasting:** Before development, validate historical booking data, therapist availability records, integration feasibility and measurable forecasting objectives.
+
+**Decision:** Progress BP2 to detailed requirements analysis while retaining specialist-led personalisation as a conditional strategic direction. Neither recommendation represents an approved investment or implementation.
+
+
 
 ## 6. Handover to Stage 3 — Requirements Analysis
 
-Carry forward separate scopes: **BP2 forecasting requirements** and the later A3 **Wellness Companion App models**. Clarify data, user decisions, exceptions and acceptance criteria against BO1–BO3. Neither solution was integrated or deployed.
+The evaluation establishes two distinct scopes:
 
-*Sources: MIS701 A1 §§2.2–2.5; MIS701 A2 opportunity matrix, value–complexity assessment and recommendation; approved Stage 1. Benefits remain proposed.*
+- **Analytics workstream (A2):** Define requirements for treatment-demand forecasting, therapist-capacity visibility and operational decision support.
+- **Digital app workstream (A3):** Analyse requirements for the separately specified Wellness Companion App, focusing on personalised guest interactions and scheduling.
+
+Each workstream will require its own requirements, business rules and traceability to relevant business objectives.
+
+The solutions are related through Pinnacle's business challenges but were not demonstrated as an integrated or deployed system.
+
