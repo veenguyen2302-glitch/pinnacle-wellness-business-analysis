@@ -1,217 +1,257 @@
 # 03 — Requirements Analysis & Prioritisation
 
 **Pinnacle Wellness Resort | Independent Business Analysis Portfolio Case Study | 2026**  
-*Fictional business scenario. Candidate requirements and priorities are analytical proposals, not stakeholder-approved specifications or delivered functionality.*  
-**Previous:** [02 — Strategy & Solution Evaluation](02-strategy-and-solution-evaluation.md)
+*Fictional business scenario. This is a proposed requirements baseline, not a client-approved specification or evidence of delivered functionality.*  
+**Previous:** [02 — Strategy & Solution Evaluation](02-strategy-and-solution-evaluation.md) · **Next:** 04 — Business Process & Solution Modelling *(planned)*
 
-## 1. From Business Decisions to Requirements Scope
+## 1. Requirements Decision & Scope
 
-[Stage 2](02-strategy-and-solution-evaluation.md) identified **treatment-demand and therapist-capacity forecasting** as the first operational initiative for requirements analysis. It also retained specialist-led personalisation as a conditional strategic direction and identified unresolved guest information and booking-workflow gaps.
+Stage 2 prioritised **treatment-demand and therapist-capacity decision support** as the first operational opportunity for requirements analysis (**BO2**). It also identified dependencies on reliable information (**BO1**) and unresolved guest-facing personalisation and scheduling needs (**BO3**, **BO2**).
 
-**Requirements decision:** Develop a **detailed baseline for operational demand and capacity decision support**, and a **limited exploratory baseline for a separately proposed Wellness Companion App**. The two concepts share business objectives but are **not assumed to exchange data or form one approved product**.
+**Scope decision:** Define the **operational forecasting requirements in detail**; capture **guest-app requirements as a separate, exploratory workstream**, not as a second approved build or an assumed integration.
 
-| Scope | Decision supported | Business alignment | Boundary |
-|---|---|---|---|
-| **Primary: Demand & Capacity Decision Support** | Can managers anticipate treatment demand, understand available therapist capacity and plan staffing? | **BO2**, enabled by reliable operational information | Forecasting and decision support, **not booking confirmation** |
-| **Supporting: Wellness Companion App concept** | Can guests safely review personalised schedules and understand whether treatment appointments are actually booked? | **BO1–BO3** | Candidate guest-facing interactions and rules, **not an approved app build** |
-| **Deferred** | Production model training/deployment, automated rostering, cross-product integration, payment and full meal-ordering workflows | Not needed to answer this stage's central requirements questions | Outside this candidate baseline |
-
-**Evidence convention:** **[S]** supported by prior case analysis or documented models; **[I]** reasoned inference requiring stakeholder confirmation; **[E]** independent portfolio enhancement filling an identified gap. **[S] does not mean validated by real stakeholders.** All MoSCoW ratings below are proposed planning judgements.
-
-## 2. Stakeholder Needs → Solution Requirements
-
-| Stakeholder | Business need / decision | Objective | Candidate requirements | Basis |
-|---|---|---|---|---|
-| Resort Operations Manager | Anticipate booking demand, compare it with therapist capacity and investigate mismatches | BO2 | F01, F02, F03, F06 | [S] |
-| Therapists / wellness professionals | See assigned workload without losing professional judgement | BO2, BO3 | F02; W06 | [S]/[E] |
-| Front desk / booking staff *(assumed user role)* | Communicate genuinely bookable appointment options | BO2 | W05 | [I]/[E] |
-| Guests | Use relevant information to review a personalised schedule; know the outcome of their response | BO1, BO3 | W01–W04 | [S] |
-| Technology / data support *(conditional role)* | Identify gaps, stale records and access restrictions affecting decisions | BO1, BO2 | F03, N01–N03 | [I] |
-| Authorised wellness specialists | Check sensitive or unsuitable recommendations before release when policy requires | BO3 | W06 | [E] |
-
-No interviews, workshops or sign-offs with these stakeholders are claimed. Roles inferred from the scenario require confirmation before delivery decisions.
-
-### Focused House of Quality interpretation
-
-The earlier forecasting analysis translated operational needs into eight system requirements. Its central conclusion was that **booking/availability data (F03)**, **demand forecasting (F01)** and **therapist-capacity visibility (F02)** are the core capabilities; forecast monitoring and demand trends follow. The compact extract below expresses **need-to-requirement relationships**, not a recalculated HoQ score.
-
-| Priority stakeholder need | Requirement linkage | Requirements consequence |
+| Workstream | Business decision supported | Requirements boundary |
 |---|---|---|
-| Forecast bookings and required treatment hours | **F01**, dependent on **F03** | Reliable historical/current booking inputs precede meaningful forecast output |
-| See capacity by specialisation and period | **F02**, dependent on **F03** | A capacity view must use therapist availability, not predicted bookings |
-| Compare anticipated demand and available capacity | **F01 + F02 + F03** | Managers need both views aligned to comparable periods and treatment types |
-| Recognise forecast error and changing patterns | **F06 + F08** | Improvement and trend views follow a working core |
+| **Primary — Demand & Capacity Decision Support** | Can operations staff anticipate treatment demand and compare it with therapist capacity? | Forecasts, capacity views and supporting data quality; **no booking confirmation or automatic rostering** |
+| **Exploratory — Wellness Companion App** | How could guests safely request, review and respond to personalised schedules? | Guest profile, recommendations, schedule states; live booking and specialist approval remain **scope/policy decisions** |
+| **Deferred / excluded** | Separate solution or implementation decisions | Cross-system integration between workstreams, production deployment, payment and complete meal-order workflows |
 
-The original HoQ's quantitative target values are **not adopted as approved service-level commitments**. This forecasting HoQ does **not** prioritise the separate app concept.
+**Evidence legend:** **[S]** = supported by the existing case analysis or diagrams; **[I]** = reasoned inference requiring validation; **[E]** = independent portfolio enhancement. Source-supported **does not** mean stakeholder-approved. All backlog priorities are **proposed**.
 
-## 3. Functional Requirements & MoSCoW Decisions
+## 2. From Stakeholder Needs to Requirements
 
-### A. Primary baseline — operational decision support
+| Stakeholder / role | Decision or need | BO | Requirement connection |
+|---|---|---|---|
+| **Resort Operations Manager** | Anticipate treatment demand; compare forecast service hours with available specialist capacity | BO2 | F01–F03, F06, F08 **[S]** |
+| **Therapist / wellness professional** | Understand assigned workload and avoid inappropriate scheduling expectations | BO2 | F02, F05; role-specific view requires confirmation **[S/I]** |
+| **Front Desk** *(assumed operational role)* | Offer genuinely available appointment times, not forecast-based promises | BO2 | **W05 [E]**, not a capability proven by F01 |
+| **Guest** | Supply relevant profile details; receive and respond to a proposed wellness schedule | BO1, BO3 | W01–W04 **[S]** |
+| **IT / data support** *(conditional role)* | Identify missing, incomplete or stale booking and capacity inputs | BO2 | F03, N02 **[S/I]** |
+| **Authorised wellness specialist** | Review specific recommendations if professional-approval rules require it | BO3 | W06 **[E]**, approval categories TBD |
 
-| ID | Candidate requirement | BO | MoSCoW | Basis |
-|---|---|---|---|---|
-| **F01** | Forecast treatment booking counts and required service hours by treatment type and agreed time period, using booking history. | BO2 | **Must** | [S] |
-| **F02** | Show therapist availability and capacity by specialisation and agreed time period for operational comparison. | BO2 | **Must** | [S] |
-| **F03** | Obtain relevant booking and therapist-availability records from designated sources; expose data currency and missing inputs. | BO1, BO2 | **Must** | [S] + [E] freshness visibility |
-| **F04** | Flag demand–capacity differences exceeding a configurable decision threshold. | BO2 | Could | [S] |
-| **F05** | Provide treatment workload and therapist-utilisation reports. | BO2 | Could | [S] |
-| **F06** | Compare past forecasts with actual bookings and display variance by period and treatment type. | BO2 | Should | [S] |
-| **F07** | Allow managers to explore alternative staffing/capacity scenarios without editing live rosters. | BO2 | Could | [S] + [E] read-only boundary |
-| **F08** | Show treatment-demand trends by treatment type and time period. | BO2 | Should | [S] |
+*These needs are interpreted from a fictional case; no real stakeholder interviews or approvals are claimed.*
 
-**Minimum useful core:** F03 → F01 and F02. F06/F08 help assess and interpret that core; F04/F05/F07 are useful only after input quality and comparison logic are credible. The original work proposed near-real-time integration targets, but technical feasibility and acceptable refresh intervals remain **TBD — validate with data owners**.
+### Focused House of Quality (HoQ) findings
 
-### Requirement dependency view
+The existing forecasting HoQ relates stakeholder needs to eight operational system requirements. Its most useful insight for this stage is a **dependency**, not a decorative score: **data integration (F03)** supports **demand forecasting (F01)** and **therapist-capacity visibility (F02)**; forecast learning and demand trends follow.
+
+| Stakeholder need (WHAT) | Important requirements (HOW) | Requirements implication |
+|---|---|---|
+| Anticipate treatment bookings and service hours | **F01 + F03** | Define booking history, treatment duration, period and forecast units |
+| Understand therapist capacity | **F02 + F03** | Define available service hours and specialisation from actual availability records |
+| Identify potential staffing gaps | **F01 + F02 + F03** | Align the time period and service-hour basis before comparing values |
+| Interpret forecast changes and performance | **F06 + F08** | Enable follow-up variance and trend analysis after the core is credible |
+
+*This is a selective, qualitative HoQ extract. It does not recalculate or invent relationship weights, adopt source targets as contractual thresholds, or assign the forecasting HoQ to the guest app.*
+
+## 3. Requirements Backlog — Theme → Epic → User Story
+
+The backlog is the **central navigation artefact**: a reader can trace a business capability to a user story, candidate requirements and the acceptance checks below. The primary workstream retains the **two themes and three epics** from the documented forecasting analysis; wording is refined where needed for clarity and scope control.
 
 ```mermaid
 flowchart LR
-    D["F03<br/>Trusted booking and<br/>therapist data"]
-    F["F01<br/>Demand forecast"]
-    C["F02<br/>Capacity view"]
-    V["F06 + F08<br/>Variance and trends"]
-    X["F04 + F05 + F07<br/>Optional operational tools"]
-
-    D --> F
-    D --> C
-    F --> V
-    C --> V
-    V -.-> X
-
-    classDef must fill:#e8f3ed,stroke:#39805c,color:#173f2c
-    classDef should fill:#e9efff,stroke:#4d72b8,color:#193765
-    classDef could fill:#fff4dc,stroke:#b98a32,color:#684b16
-    class D,F,C must
-    class V should
-    class X could
+    BO["Business objectives<br/>BO1 · BO2 · BO3"]
+    T["Theme<br/>Business outcome area"]
+    E["Epic<br/>Major capability"]
+    US["User story<br/>User decision or outcome"]
+    R["Requirement ID<br/>What must be specified"]
+    AC["Acceptance criteria<br/>How to verify behaviour"]
+    BO --> T --> E --> US --> R --> AC
+    classDef key fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    class US,R key
 ```
 
-*Arrows show proposed logical dependencies, not a signed-off implementation sequence or schedule.*
+### Primary backlog — operational forecasting and capacity planning
 
-### B. Supporting baseline — guest app concept (exploratory)
-
-| ID | Candidate requirement | BO | Proposed priority | Basis |
+| Theme | Epic | User story and user value | Linked requirements | Scope / test link |
 |---|---|---|---|---|
-| **W01** | Retrieve a guest's authorised wellness profile and request required missing information before generating a personalised schedule. | BO1, BO3 | Must | [S] |
-| **W02** | Use profile and activity records to request recommendations from an external service; validate the returned data before presenting a proposed schedule. | BO1, BO3 | Must | [S] |
-| **W03** | Record and distinguish a guest's schedule response: **confirmed by guest**, **not confirmed / expired**, or **generation failed**. | BO3 | Must | [S] |
-| **W04** | Explain an unavailable recommendation service without silently producing or confirming a schedule. | BO3 | Must | [S] |
-| **W05** | Verify live appointment and therapist availability, then obtain an explicit reservation outcome **separately from guest schedule confirmation**. | BO2 | **Should — scope gate** | [E] |
-| **W06** | Route recommendations requiring professional oversight to an authorised specialist and prevent their release until the required decision is recorded. | BO3 | **Should — policy gate** | [E] |
+| **T1 — Predictive Demand & Capacity Planning** | **E1 — Treatment Demand Forecasting** | **US01 — Forecast demand:** As resort management, I want predicted bookings and treatment hours by treatment type and period so I can anticipate resource needs. | F01, F03 | **Core** · AC01–02 |
+| T1 | E1 | **US02 — Peak periods:** As an Operations Manager, I want to identify predicted peak and quieter periods so I can consider staffing adjustments. | F01, F08 | **Should** · trend detail later |
+| T1 | **E2 — Therapist Capacity Planning** | **US03 — Capacity visibility:** As an Operations Manager, I want available therapist service hours by specialisation and defined period so I can understand capacity before staffing decisions. | F02, F03 | **Core** · AC03 |
+| T1 | E2 | **US04 — Demand–capacity comparison:** As an Operations Manager, I want forecast treatment hours compared with available therapist hours for matching periods so I can recognise planning gaps. | F01–F03 | **Core** · AC04 |
+| **T2 — Operational Decision Support & Reliable Delivery** | **E3 — Operational Decision Support & Data Reliability** | **US05 — Capacity alerts:** As an Operations Manager, I want to see material forecast–capacity differences so I can review possible staffing responses. | F04 | **Could** · threshold TBD |
+| T2 | E3 | **US06 — Appointment availability:** As a Front Desk Receptionist, I want to view actually available treatment times so I can offer guests credible options. | W05 **[E]**, live-booking source TBD | **Scope gate** · AC09; **not** supplied by forecast data |
+| T2 | E3 | **US07 — Workload view:** As a Therapist, I want to see my assigned appointments and scheduled hours so I can identify potential overbooking. | F05 *(partial linkage)*; additional operational source may be needed **[I]** | **Could / scope gate** · rule TBD |
+| T2 | E3 | **US08 — Data freshness:** As an IT/data support user, I want booking and availability refresh status so I can identify unreliable inputs before reports are used. | F03, N02 | **Core control** · AC05 |
 
-**Important:** The app's existing model concerns **guest confirmation of a personalised wellness schedule**. It does **not** prove that treatment appointments are reserved. W05 is an additional requirement to investigate, not a capability previously delivered or demonstrated. The app concept itself must pass a separate scope/feasibility decision before these proposed priorities are adopted.
+**Scope correction:** The eight story topics come from the original forecasting analysis, but **US06 is a transactional appointment-availability need** and cannot be satisfied merely by the forecasting capability. **US07** needs a per-therapist operational schedule source beyond an aggregate utilisation report. Both are retained visibly as **scope questions**, rather than silently promised in the forecasting solution.
 
-### C. Quality and control requirements
+### Supporting backlog — exploratory personalised guest journey
 
-| ID | Candidate non-functional requirement / constraint | Applies to | Acceptance target |
-|---|---|---|---|
-| **N01** | Restrict guest, therapist and management information by authorised role and purpose. | Both | Role matrix **TBD**; unauthorised requests must be denied |
-| **N02** | Clearly identify missing, failed or stale data and prevent unsupported outputs from appearing current. | Forecasting; app recommendations | Source refresh and tolerance thresholds **TBD** |
-| **N03** | Use guest wellness information only under applicable consent, access and retention rules. | App; any guest-data use | Privacy and retention policy **TBD** |
-| **N04** | Make forecast units, periods, comparison basis and data-refresh status interpretable to decision-makers. | Forecasting | Reviewed usability criteria **TBD** |
-| **N05** | Preserve meaningful decision and exception statuses for later investigation. | Both | Required audit fields/retention **TBD** |
+| Theme | Epic | User story and user value | Linked requirements | Scope / test link |
+|---|---|---|---|---|
+| **T3 — Personalised Guest Journey** | **E4 — Guest Profile & Schedule** | **US09 — Complete profile:** As a Guest, I want to provide missing required wellness details so a relevant schedule can be requested. | W01 | **Exploratory [S]** · AC06 |
+| T3 | E4 | **US10 — Obtain recommendations:** As a Guest, I want to request a personalised schedule and see a clear failure state if recommendations cannot be obtained. | W02, W04 | **Exploratory [S]** · AC07 |
+| T3 | E4 | **US11 — Respond to schedule:** As a Guest, I want to review and respond to a proposed wellness schedule so its status is clear. | W03 | **Exploratory [S]** · AC08 |
+| T3 | **E5 — Booking Assurance & Specialist Oversight** | **US12 — Confirm actual reservation:** As booking staff, I want appointment availability and a reservation outcome checked before claiming a treatment is booked. | W05 | **Enhancement / scope gate [E]** · AC09 |
+| T3 | E5 | **US13 — Professional review:** As an authorised specialist, I want to review recommendations that require professional sign-off before guests receive them. | W06 | **Enhancement / policy gate [E]** · AC10 |
 
-All numerical performance, forecast-accuracy, accessibility and refresh thresholds require feasibility review; none is presented as an approved specification.
+*The guest-app epic/story organisation is a portfolio refinement, not an existing approved backlog. US06 and US12 describe the same unmet booking-control need from different user contexts; **they do not imply two systems or duplicate delivery commitments**.*
 
-## 4. Representative User Stories & Testable Acceptance Criteria
+## 4. Candidate Requirements & MoSCoW Decisions
 
-User stories narrow the requirements to decisions a user can take. They are **candidate stories**, not evidence of backlog approval.
+### Primary capability — forecast and capacity decision support
 
-| Story | User story | Linked requirements |
+| ID | Testable requirement statement | BO | Priority | Evidence |
+|---|---|---|---|---|
+| **F01** | Produce forecast booking counts and required treatment hours by treatment type and selected planning period. | BO2 | **Must** | [S] |
+| **F02** | Display therapist availability and capacity by specialisation and comparable period. | BO2 | **Must** | [S] |
+| **F03** | Obtain booking and therapist-availability data from specified sources and indicate freshness, missing inputs and failed refreshes. | BO2 | **Must** | [S] + status clarification [E] |
+| **F04** | Display an alert when demand–capacity variance exceeds an agreed threshold. | BO2 | Could | [S] |
+| **F05** | Report treatment workload and therapist utilisation over selected periods; a personal daily schedule is **not automatically included**. | BO2 | Could | [S] |
+| **F06** | Compare historic forecasts and actual bookings by treatment type and period. | BO2 | Should | [S] |
+| **F07** | Support read-only exploration of alternative therapist-allocation scenarios. | BO2 | Could | [S] + read-only boundary [E] |
+| **F08** | Present demand trends by treatment type and period. | BO2 | Should | [S] |
+
+**Proposed minimum coherent capability:** **F03 → F01 + F02**, including an aligned read-only comparison (US04). Forecast-versus-actual and trends (**F06/F08**) follow once core data are reliable. Alerts, workload reports and scenario planning (**F04/F05/F07**) are optional. **Won't Have for this scope:** live appointment reservation, automated rostering and integrations between the two workstreams.
+
+### Exploratory app capability — priorities apply only if the concept is approved
+
+| ID | Candidate requirement | BO | Conditional priority | Evidence |
+|---|---|---|---|---|
+| **W01** | Check required guest-profile information and request missing details before recommendation generation. | BO1, BO3 | Must *within proposed app scope* | [S] |
+| **W02** | Request external recommendations using permitted profile/activity data and validate the response before assembling a proposed schedule. | BO1, BO3 | Must *within proposed app scope* | [S] |
+| **W03** | Record separate guest-response outcomes for a proposed wellness schedule: guest-confirmed, unconfirmed/expired or failed generation. | BO3 | Must *within proposed app scope* | [S] |
+| **W04** | Report external recommendation unavailability without issuing a false confirmed schedule. | BO3 | Must *within proposed app scope* | [S] |
+| **W05** | Check current appointment and qualified therapist availability and record a separate reservation success/failure outcome. | BO2 | **Must if transactional booking confirmation enters scope; otherwise Won't Have** | [E] |
+| **W06** | Hold specified recommendation categories for authorised specialist review and record approval/rejection before release. | BO3 | **Must if applicable approval policy requires it; otherwise policy TBD** | [E] |
+
+**Priority correction:** W05 is not merely “Should”. If the business decides the app will **confirm actual bookings**, a successful live availability/reservation check is a necessary control. If the app is only a wellness-*schedule* confirmation tool, W05 stays out of that narrower scope. **A scope decision must precede its MoSCoW rating.**
+
+### Non-functional requirements and controls
+
+| ID | Candidate control | Verification / unresolved target |
 |---|---|---|
-| **US01** | As an **Operations Manager**, I want to view forecast treatment bookings and service hours for a selected treatment type and week, so that I can anticipate therapist demand. | F01, F03 |
-| **US02** | As an **Operations Manager**, I want to compare available therapist hours by specialisation with forecast treatment hours for the same period, so that I can identify planning gaps. | F01–F03 |
-| **US03** | As a **Guest**, I want to review and respond to a personalised wellness schedule, so that I understand my proposed plan and its confirmation status. | W01–W04 |
-| **US04** | As a **booking staff member**, I want a proposed appointment checked against actual therapist/slot availability before telling a guest it is booked, so that I do not misrepresent a schedule as a reservation. | W05 **[E]** |
+| **N01** | Restrict guest, therapist and management data by authorised role and purpose. | Access matrix TBD; prohibited requests must disclose no protected data |
+| **N02** | Show missing, stale and failed source-data states and qualify affected outputs. | Freshness thresholds and source ownership **TBD** |
+| **N03** | Apply consent, retention and privacy requirements to identifiable wellness information. | Permitted fields, retention periods and consent rules **TBD** |
+| **N04** | Explain forecast units, periods, calculation basis and refresh status in understandable terms. | Usability criteria and operational review **TBD** |
+| **N05** | Retain meaningful schedule/booking/review states and exceptions for authorised investigation. | Audit fields and retention **TBD** |
 
-### Acceptance examples — positive and exception paths
+No forecast accuracy, uptime, processing-time or refresh target is asserted as an approved performance standard. Existing numerical suggestions need stakeholder/data-owner review.
+
+### Requirements dependency map
+
+```mermaid
+flowchart LR
+    D["F03 + N02<br/>Reliable, current input"]
+    F["F01<br/>Demand forecast"]
+    C["F02<br/>Capacity view"]
+    M["US04<br/>Comparable demand–capacity view"]
+    L["F06 + F08<br/>Learning and trends"]
+    O["F04 + F05 + F07<br/>Optional decisions"]
+    D --> F
+    D --> C
+    F --> M
+    C --> M
+    M --> L
+    L -.-> O
+    classDef core fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    classDef next fill:#e9efff,stroke:#4d72b8,color:#193765
+    class D,F,C,M core
+    class L next
+```
+
+*Logical dependency, not an approved development schedule. The app is deliberately absent: cross-workstream integration has not been established.*
+
+## 5. Story Refinement, Acceptance Criteria & INVEST
+
+### An evidence-based INVEST example
+
+The original capacity-visibility story was too broad around **“period”**, **“capacity”** and possible staffing-allocation actions. Its earlier numeric INVEST assessment identified weak **Estimable, Small and Testable** aspects. The following **qualitative refinement** makes the story easier to evaluate without implying a development-team estimate:
+
+> **Before:** “As an Operations Manager, I want to view therapist availability and capacity by specialisation and period so I can understand available service capacity before making staffing decisions.”
+>
+> **After — US03:** “As an Operations Manager, I want a **read-only view of available therapist service hours by specialisation for a selected, bounded period**, so I can understand capacity before making staffing decisions.”
+
+| INVEST check | Reasoned result for refined US03 |
+|---|---|
+| **Independent** | The read-only capacity view has a distinct outcome; dependency on F03 is transparent. |
+| **Negotiable** | Layout and filters remain open to user feedback. |
+| **Valuable** | Supports BO2 staffing and capacity decisions. |
+| **Estimable** | Period, available-hour calculation and source definitions still need confirmation. |
+| **Small** | Excludes forecasting, automatic roster changes and appointment booking. |
+| **Testable** | Source-matched available hours and refresh status can be checked (AC03). |
+
+**Why no numeric INVEST score here?** The source recorded scores for selected stories, but scores are **diagnostic indicators of story quality**, not business-value ranking or delivery approval. Demonstrating the issue, refinement and acceptance test is more persuasive than inventing or reproducing an arbitrary new score.
+
+### Acceptance criteria — representative success and exception paths
 
 | ID / story | Given | When | Then |
 |---|---|---|---|
-| **AC01 / US01** | Approved booking inputs are available for the requested period | Management selects a treatment type and week | The view shows forecast **booking counts**, **required service hours**, the selected period and the input refresh status |
-| **AC02 / US01** | Required source data are missing, stale or fail validation | Management requests a forecast | The view identifies the affected input and does **not** present an unqualified current forecast |
-| **AC03 / US02** | Forecast hours and capacity hours cover the same period/specialisation | Management opens a comparison | Both values and their units are shown; any difference is labelled a **planning gap**, not a confirmed appointment clash |
-| **AC04 / US03** | A guest profile lacks required details | The guest requests a personalised schedule | Required information is requested before recommendation generation; no completed schedule is falsely reported |
-| **AC05 / US03** | The external recommendation service times out or fails | Schedule generation is attempted | The guest sees a failure/unavailable state, and no schedule is recorded as guest-confirmed |
-| **AC06 / US03** | A proposed schedule is displayed | The guest confirms it or the response period expires | The system records the appropriate **guest schedule response**; it does **not** claim a treatment reservation exists |
-| **AC07 / US04** | The guest requests an appointment for an offered treatment and time | The booking workflow checks the actual slot and qualified therapist | Confirmation is issued **only if** a reservation succeeds; otherwise the guest sees an unavailable/unconfirmed outcome **[E]** |
-| **AC08 / US04** | A user lacks permission to view another guest's or therapist's protected details | They request those details | The request is denied without exposing protected information **[E]** |
+| **AC01 / US01** | Usable booking history and agreed treatment durations exist | An authorised manager requests a forecast by treatment and period | Show expected booking count, service hours, period, units and source refresh status |
+| **AC02 / US01** | Required forecast inputs are missing, invalid or beyond an agreed freshness tolerance | The forecast is requested | Identify the affected data and do **not** present an unqualified current forecast |
+| **AC03 / US03** | Therapist availability records exist for a selected specialisation and bounded period | A manager opens the capacity view | Show available service hours matching source records and the last refresh time; make no automatic allocation |
+| **AC04 / US04** | Forecast and capacity values use the same specialisation, period and hour definitions | A manager compares the values | Show both figures and their planning variance; do **not** label it a live appointment clash |
+| **AC05 / US08** | A scheduled booking or capacity-data refresh has failed | An authorised data-support user checks data status | Show failed source, last successful refresh and affected outputs; do not hide the failure |
+| **AC06 / US09** | A guest profile lacks a required item | The guest requests a personalised schedule | Request the missing item before sending the recommendation request |
+| **AC07 / US10** | The external AI recommendation service times out or returns unusable data | The app attempts schedule creation | Report a failed/unavailable schedule-generation state without recording confirmation |
+| **AC08 / US11** | A proposed schedule is available and a response window exists | The guest confirms or the window expires | Record **guest-confirmed** or **unconfirmed/expired** schedule status, **not** reservation confirmation |
+| **AC09 / US12** | A real appointment booking is in scope and a treatment/time is requested | Live slot, qualified therapist and reservation outcome are checked | Say **booked** only after reservation success; otherwise show unavailable/unconfirmed **[E]** |
+| **AC10 / US13** | A recommendation belongs to a category requiring professional approval | A guest would otherwise receive it | Keep it pending until an authorised specialist records approval/rejection **[E]** |
+| **AC11 / N01** | A user is not permitted to access another guest's or therapist's protected details | The user requests those details | Deny the request without disclosing protected fields; log as required by the access policy **[I]** |
 
-**Professional-review rule [E]:** Recommendations subject to a defined specialist-approval policy must remain *pending review* until an authorised reviewer approves, amends or rejects them. The categories of recommendations requiring approval are **TBD**, not presumed to include every suggestion.
+*These are **proposed acceptance criteria**, not test results. Exact forecast periods, freshness thresholds, role permissions and approval categories remain TBD.*
 
-### INVEST refinement — one example
+## 6. Business Rules & Critical Scope Distinctions
 
-An initially broad capacity story combining forecast generation, live booking availability, workforce allocation and scheduling would be difficult to estimate and test. **US02** narrows the result to a **read-only comparison for one period and specialisation**, leaving live booking confirmation to **US04** and rostering changes outside this baseline. That improves independence, estimability, smallness and testability while preserving business value. Dependencies on F01/F03 are explicit; effort estimation and stakeholder agreement remain outstanding.
-
-## 5. Business Rules That Prevent Misleading Outcomes
-
-| Rule | Candidate business rule | Basis |
+| Rule | Candidate rule | Basis |
 |---|---|---|
-| **BR01** | Forecast treatment hours and therapist capacity must use comparable time periods and clearly defined units. | [I] |
-| **BR02** | A forecast must not be displayed as real-time appointment availability. | [E] clarification |
-| **BR03** | Guest confirmation of a **wellness schedule** must not be treated as a successful **treatment booking** without a separate reservation outcome. | [E] clarification |
-| **BR04** | Missing profile data and recommendation-service failure must not silently produce a confirmed schedule. | [S] |
-| **BR05** | A restricted wellness recommendation must not be released without the specialist approval required by an agreed policy. | [E] |
-| **BR06** | Access to identifiable wellness, booking and therapist information must follow authorised roles. | [S]/[I] |
+| **BR01** | A demand–capacity comparison must use compatible units, time windows and treatment/specialisation definitions. | [I] |
+| **BR02** | Forecast demand must never be represented as live slot availability. | [E] clarification |
+| **BR03** | Guest acceptance of a **wellness schedule** is not evidence of an actual **treatment reservation**. | [E] clarification |
+| **BR04** | Incomplete required profile data or a failed recommendation service must not create a confirmed schedule. | [S] |
+| **BR05** | Recommendations subject to a defined professional-approval policy must remain pending until the authorised decision. | [E] |
+| **BR06** | Personally identifiable guest and staff information must be disclosed only to authorised roles. | [S/I] |
 
-### Critical scheduling distinction
+### Schedule agreement is not a reservation
 
 ```mermaid
 flowchart LR
-    S["Proposed wellness schedule"]
-    G["Guest agrees to schedule"]
-    R["Actual slot and therapist check"]
-    B["Reservation confirmed"]
-    U["Unavailable / unconfirmed"]
-
+    S["Proposed wellness<br/>schedule"]
+    G["Guest agrees<br/>to schedule"]
+    R["Actual slot / qualified<br/>therapist check"]
+    B["Reservation<br/>confirmed"]
+    U["Unavailable /<br/>unconfirmed"]
     S --> G
-    G -.->|"Proposed new booking rule"| R
-    R -->|"Available + reservation succeeds"| B
-    R -->|"Unavailable or failure"| U
-
-    classDef proposal fill:#fff4dc,stroke:#b98a32,color:#684b16
-    classDef confirmed fill:#e8f3ed,stroke:#39805c,color:#173f2c
-    class R proposal
-    class B confirmed
+    G -.->|"Only if booking enters scope [E]"| R
+    R -->|"Reservation succeeds"| B
+    R -->|"Unavailable / fails"| U
+    classDef gate fill:#fff4dc,stroke:#b98a32,color:#684b16
+    classDef outcome fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    class R gate
+    class B outcome
 ```
 
-*The dashed transition and reservation checks are **portfolio enhancements**, not behaviour established by the existing app model. Stage 4 should model this distinction if the proposed booking scope is accepted.*
+*Dashed linkage and reservation checks are **proposed enhancements**, not behaviour established in the existing guest-schedule confirmation models.*
 
-## 6. Requirements Traceability — Why Each Requirement Exists
+## 7. Traceability & Coverage Decisions
 
-| Business objective / need | Requirement | Story / acceptance evidence | Proposed value or validation question |
-|---|---|---|---|
-| **BO2:** anticipate service demand | F01 + F03 | US01 / AC01–AC02 | Can managers see a usable, qualified forecast? Measure error against actual demand after baseline agreement. |
-| **BO2:** understand capacity constraints | F02 + F03 | US02 / AC03 | Can managers compare demand and therapist hours using consistent periods? |
-| **BO2:** improve forecast interpretation | F06 + F08 | Future story refinement | Can variance and trend views support informed roster decisions? |
-| **BO1 + BO3:** reliable guest context | W01 + W02 | US03 / AC04–AC05 | Is required authorised information available before recommendations are presented? |
-| **BO3:** communicate schedule outcome | W03 + W04 | US03 / AC05–AC06 | Can guests distinguish proposed, confirmed-by-guest and failed/expired schedule states? |
-| **BO2:** prevent false booking confirmation | W05 | US04 / AC07 | Does a booking message depend on an actual successful reservation? **[E]** |
-| **BO1:** protect information access | N01 + N03 | US04 / AC08; proposed permissions tests | Can access controls prevent inappropriate disclosure? |
-| **BO3:** protect specialist-led care | W06 | Policy/acceptance criteria still **TBD** | Which recommendations require review and who may approve them? **[E]** |
+A useful trace connects an outcome to a user decision and observable behaviour. The backlog in Section 3 maps **Theme → Epic → User Story → Requirement**; this table completes the chain through business objectives and acceptance checks without duplicating every story.
 
-**Coverage gap:** BO1 has privacy and data-control requirements, but **no approved cross-system information-continuity solution**. BO3 remains largely conditional because the guest app and specialist-review rules have not been selected or validated. The traceability matrix exposes those gaps rather than implying full objective coverage.
+| Objective / need | Epic → story | Requirement | Evidence of acceptance | Expected value / open validation |
+|---|---|---|---|---|
+| **BO2 — anticipate treatment demand** | E1 → US01 | F01, F03 | AC01–02 | Qualified forecast to inform resource planning; predictive performance unvalidated |
+| **BO2 — understand usable capacity** | E2 → US03, US04 | F01–F03 | AC03–04 | Comparable service hours to identify planning gaps |
+| **BO2 — trustworthy planning inputs** | E3 → US08 | F03, N02 | AC05 | Avoid capacity decisions using hidden stale inputs |
+| **BO2 — service availability clarity** | E3 → US06; E5 → US12 | W05 *only if scoped* | AC09 **[E]** | Prevent false booking confirmation; source integration unverified |
+| **BO1/BO3 — relevant guest data and schedules** | E4 → US09–US11 | W01–W04 | AC06–08 | Clear guest input and schedule states; app unapproved |
+| **BO3 — professional oversight** | E5 → US13 | W06 | AC10 **[E]** | Guard specialist-review decisions; policy undefined |
+| **BO1 — authorised data use** | Cross-cutting | N01, N03 | AC11 + privacy-policy checks TBD | Reduce inappropriate disclosure; controls not validated |
 
-## 7. Assumptions, Risks & Open Decisions
+**Coverage gaps:** BO1 still lacks a selected end-to-end guest information-continuity solution. BO2 forecasting addresses *planning*, not reservations. BO3 remains conditional on app feasibility and specialist-governance decisions. Coverage of these objectives is **partial**, not proof of benefit realisation.
 
-| Open decision / risk | Why it matters | Required next evidence |
+## 8. Open Decisions & Stage 4 Modelling Handover
+
+| Decision to validate | Why it affects requirements | Suggested Stage 4 model |
 |---|---|---|
-| Historical bookings may not support the intended forecast granularity | Forecast outputs could be misleading | Data profiling, treatment duration definitions, chosen forecast horizon and validation approach |
-| Therapist availability may be incomplete or not comparable with booking periods | Capacity comparison could be inaccurate | Source ownership, specialisation rules, cancellations and refresh checks |
-| Forecasting and booking views could be confused | Staff might promise slots based on predicted demand | Workflow definition separating planning forecasts from live booking availability |
-| Guest information may be fragmented or subject to consent limits | Personalisation could be incomplete or inappropriate | Data/consent inventory, permissible fields, role matrix |
-| Professional review requirements are undefined | Sensitive recommendations could bypass needed judgement | Clinical/wellness governance review and approval policy |
-| Companion App scope has not been approved | Detailed requirements could imply a committed second solution | Independent value, scope and feasibility assessment |
+| Historical booking completeness, treatment durations and forecast granularity | F01 may otherwise provide misleading demand hours | **BPMN (proposed forecasting decision flow)** with input-validation exceptions |
+| Therapist specialisations, actual availability and unit definitions | F02/US04 comparisons require compatible capacity records | **Use case/specification** for capacity view and comparison |
+| Read-only forecast versus transactional booking scope | US06/US12 and W05 cannot be smuggled into forecast delivery | **Separate BPMN To-Be booking flow** *only if* scope accepted |
+| Guest profile, external recommendation failures and confirmation expiry | W01–W04 contain meaningful exception states | **Sequence diagram + BPMN** for proposed schedule request/confirmation |
+| Meaning and ownership of Guest, WellnessProfile, Recommendation, WellnessSchedule and TreatmentBooking | Prevents treating a schedule as a reservation | **Domain class diagram** with distinct entities and states |
+| Approval categories, consent and access roles | W06/N01/N03 may block release or disclosure | **Business-rule decision table** and authorisation scenarios |
 
-## 8. Handover to Stage 4 — Process & Solution Modelling
+**Recommended Stage 4 emphasis:** Model the **forecasting data-to-decision workflow** first; model the **guest-schedule interaction separately**, using existing UML/BPMN case material as the analytical starting point. Clearly mark any inferred *As-Is* process and proposed *To-Be* change. Do not imply either system was integrated, deployed or validated with real stakeholders.
 
-Stage 4 should model only the workflows and information structures needed to resolve the requirements above:
-
-| Model | What to show | Requirements / decision supported |
-|---|---|---|
-| **BPMN — forecasting decision flow** *(proposed)* | Acquire/validate booking and capacity data → generate forecast → compare capacity → management review; include invalid-data path | F01–F03, AC02–AC03 |
-| **Use case + specification — app concept** | Guest requests/views/responds to schedule; separate booking interaction where scoped | W01–W05, BR03 |
-| **Sequence diagram — schedule interaction** | Guest, app and external recommendation service; incomplete profile, timeout and response expiry | W01–W04, AC04–AC06 |
-| **Domain class model — information boundaries** | Guest, WellnessProfile, ActivityRecord, Recommendation, WellnessSchedule and distinct TreatmentBooking | BO1, W01–W05 |
-| **BPMN — proposed guest-service process** | Responsibility for schedule preparation, guest confirmation and optional booking validation | W03–W05, BR03; distinguish existing-model behaviour from additions |
-
-An **As-Is** process must not be drawn as observed operational fact unless source evidence supports it; any reconstructed current-state process needs an *assumed* label. Neither workstream has been developed, integrated or tested. **Next validation step:** confirm data availability, user decisions, app scope and missing business rules before treating these requirements as an approved baseline.
+**Requirements status:** Working portfolio baseline for modelling and review; not signed off. The next business decisions are **data readiness, reservation scope and specialist-approval policy**.
