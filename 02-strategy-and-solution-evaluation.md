@@ -1,102 +1,83 @@
+
 # 02 — Strategy & Solution Evaluation
 
-**Pinnacle Wellness Resort | Deakin University academic case study | 2026**  
-**Status:** Proposed strategic and analytics recommendations; not approved investments or implemented solutions.  
-**Previous stage:** [01 — Business Discovery](01-business-discovery.md)
+**Pinnacle Wellness Resort | Independent Business Analysis Portfolio Case Study | 2026**
 
+*Fictional business scenario. Recommendations are proposed, not approved investments or implemented solutions.*
+
+**Previous:** [01 — Business Discovery](01-business-discovery.md)
 
 ## 1. Business Decision Context
 
-Stage 1 established one challenge: **fragmented guest information and difficult coordination between personalised treatment demand and specialist capacity**. Pinnacle needed to prioritise investment without weakening specialist-led service.
+Pinnacle's challenge is **fragmented guest information and difficult coordination between personalised treatment demand and specialist capacity**. The decision is what to prioritise without weakening specialist-led service.
 
-Evaluation criteria: **BO1 — information continuity; BO2 — scheduling efficiency; BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
+Options were assessed against **BO1 — information continuity**, **BO2 — scheduling efficiency** and **BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
 
-
-### Solution Evaluation & Decision Flow
+### Decision Path
 
 ```mermaid
 flowchart LR
-    A["Stage 1<br/>Business Problem"]
+    P["Business problem<br/>BO1 · BO2 · BO3"]
+    S["Strategic options<br/>Guest experience"]
+    O["Analytics opportunities<br/>Operational decisions"]
+    SP["Specialist-led<br/>AI personalisation"]
+    FC["Treatment demand &<br/>capacity forecasting"]
+    SG["Pilot readiness<br/>Data · Privacy · Specialist review"]
+    FG["Requirements readiness<br/>Booking data · Capacity · Integration"]
 
-    B["A1: Strategic Evaluation"]
-    C["A2: Analytics Evaluation"]
+    P --> S -->|Preferred direction| SP --> SG
+    P --> O -->|First priority| FC --> FG
 
-    D["Specialist-Led<br/>AI Personalisation"]
-    E["Demand & Capacity<br/>Forecasting"]
-
-    F["Feasibility Gates<br/>Data · Privacy · Operations"]
-    G["Stage 3<br/>Requirements Analysis"]
-
-    A --> B
-    A --> C
-
-    B -->|Recommended strategy| D
-    C -->|Prioritised initiative| E
-
-    D --> F
-    E --> F
-
-    F -->|Subject to validation| G
-
-    classDef selected fill:#e8f3ed,stroke:#39805c,color:#173f2c
-    classDef gate fill:#fff4dc,stroke:#b98a32,color:#684b16
-
-    class D,E selected
-    class F gate
+    classDef chosen fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    classDef checkpoint fill:#fff4dc,stroke:#b98a32,color:#684b16
+    class SP,FC chosen
+    class SG,FG checkpoint
 ```
 
-*Both recommendations remain proposed and subject to feasibility validation. They represent separate but related workstreams.*
+*The branches represent distinct decisions and readiness checks—not an integrated delivery programme.*
 
+## 2. Strategic Solution Evaluation
 
-## 2. Digital Strategy Evaluation — A1
+Two directions were evaluated through SWOT/TOWS and a value–feasibility comparison.
 
-A1 used SWOT/TOWS to compare **Specialist-Led AI Personalisation** with **Predictive Demand and Capacity Planning**.
+**Preferred: Specialist-Led AI Personalisation.** This direction builds on professional expertise to offer more relevant wellness experiences (**BO3**). It depends on reliable, appropriately accessible guest information (**BO1**) and specialist oversight. Its potential differentiation comes with privacy, workload and organisational-change risks.
 
-**Preferred strategic direction: Specialist-Led AI Personalisation.** Uses specialist expertise to improve personalised recommendations (**BO3**) and guest differentiation, contingent on authorised, reliable information (**BO1**) and specialist review.
+**Alternative: Predictive Demand and Capacity Planning.** This offers more immediate operational focus (**BO2**) through a narrower, potentially more reversible pilot. It offers less guest-facing differentiation and depends on forecast quality.
 
-**Alternative: Predictive Demand and Capacity Planning.** Addresses capacity decisions (**BO2**) through a narrower, more reversible pilot, potentially delivering earlier operational value but less guest-facing differentiation. Forecast errors threaten service flexibility.
+**Strategic decision:** Retain personalisation as the preferred *conditional* direction; test its feasibility through a bounded pilot before expansion. Capacity planning remains a valid, separate operational opportunity.
 
-**Decision:** Prioritise personalisation strategically, conditionally on a bounded pilot and governance controls. Capacity planning remains separate; scheduling and integration gaps persist.
+## 3. Operational Analytics Opportunity Evaluation
 
-## 3. Business Analytics Opportunity Evaluation — A2
+Three opportunities were compared on business value, problem fit, data availability, complexity and operational usefulness.
 
-A2 compared three initiatives for value, problem fit, data availability, complexity and operational usefulness.
-
-| Opportunity | Business case and dependencies | A2 priority |
+| Opportunity | Decision rationale | Priority |
 |---|---|---|
-| **BP1 — Guest Return-Risk Prediction** | Could target retention; needs reliable revisit histories and offers less direct scheduling value. | **Second** |
-| **BP2 — Treatment Demand & Therapist Capacity Forecasting** | Forecasts bookings and treatment hours for staffing decisions (**BO2**); needs booking and therapist-availability data. | **First — selected for requirements analysis** |
-| **BP3 — Guest Wellness Segmentation** | Could tailor wellness programmes (**BO3**); less directly useful for scheduling. | **Third** |
+| **Guest Return-Risk Prediction** | May support retention interventions; less direct relevance to treatment capacity and dependent on reliable visit history. | Second |
+| **Treatment Demand & Therapist Capacity Forecasting** | Supports booking-volume, treatment-hours and workforce-planning decisions; requires consistent booking and therapist-capacity data. | **First — selected for detailed requirements** |
+| **Guest Wellness Segmentation** | Could support tailored programmes, but offers less direct support for immediate scheduling decisions. | Third |
 
-**Decision:** Advance BP2: high assessed operational usefulness and alignment, moderate estimated complexity. Rankings remain unvalidated academic judgements.
+**Operational decision:** Prioritise forecasting because of its strong assessed problem fit and operational usefulness, with moderate estimated complexity. These are preliminary assessments, not measured outcomes.
 
 ## 4. Objective Coverage & Remaining Gaps
 
-| Objective | Proposed response and expected value | Unresolved dependency or gap |
+| Objective | Proposed capability and potential value | Unresolved gap |
 |---|---|---|
-| **BO1 — Information continuity** | Authorised access supports personalisation; A1 also explored a **separate analytics query tool**. | No integrated data solution selected; assess quality, access and interoperability. |
-| **BO2 — Scheduling efficiency** | BP2 could improve demand and capacity planning. | Forecasting does **not** guarantee live availability or booking confirmation. |
-| **BO3 — Personalised experience** | A1's specialist-led direction could improve relevance and consistency. | Recommendation quality and specialist workload remain untested. |
+| **BO1 — Information continuity** | Authorised access to relevant guest information could support more consistent decisions; an operational analytics query capability was also considered. | No integrated data solution confirmed; information quality, access and interoperability require assessment. |
+| **BO2 — Scheduling efficiency** | Forecasting could improve demand and therapist-capacity planning. | Forecasts do not establish live availability or guarantee successful appointment bookings. |
+| **BO3 — Personalised experience** | Specialist-led recommendations could support more relevant services. | Recommendation suitability, guest acceptance and specialist workload are unvalidated. |
 
+## 5. Feasibility & Decision Gates
 
-## 5. Feasibility, Risks & Decision Gates
+**Personalisation:** Assess guest-data readiness, consent and access arrangements, recommendation suitability, specialist approval and operational workload before a pilot.
 
-**Strategic personalisation:** Before piloting, assess guest-data readiness, consent, privacy controls, specialist review requirements and operational workload.
+**Forecasting:** Verify historical booking coverage, therapist availability, data integration and meaningful forecast-performance measures before development.
 
-**Demand and capacity forecasting:** Before development, validate historical booking data, therapist availability records, integration feasibility and measurable forecasting objectives.
+**Decision:** Progress forecasting to requirements analysis. Keep personalisation as a strategic direction subject to a controlled feasibility assessment. Neither choice constitutes funding approval or production delivery.
 
-**Decision:** Progress BP2 to detailed requirements analysis while retaining specialist-led personalisation as a conditional strategic direction. Neither recommendation represents an approved investment or implementation.
+## 6. Handover to Requirements Analysis
 
+The next stage will specify **forecasting and capacity-visibility requirements**. A **separately scoped Wellness Companion App** will also be analysed for personalised guest interactions and scheduling; its scope is related to the strategic direction, **not an implementation of the forecasting initiative**.
 
+Each workstream needs separately traceable requirements, business rules and acceptance criteria. Booking validation, interoperability and specialist review remain open design questions.
 
-## 6. Handover to Stage 3 — Requirements Analysis
-
-The evaluation establishes two distinct scopes:
-
-- **Analytics workstream (A2):** Define requirements for treatment-demand forecasting, therapist-capacity visibility and operational decision support.
-- **Digital app workstream (A3):** Analyse requirements for the separately specified Wellness Companion App, focusing on personalised guest interactions and scheduling.
-
-Each workstream will require its own requirements, business rules and traceability to relevant business objectives.
-
-The solutions are related through Pinnacle's business challenges but were not demonstrated as an integrated or deployed system.
-
+*Evidence basis: original university case analysis and subsequent independent portfolio refinement. No live stakeholder validation, integration, deployment or realised benefits are claimed.*
