@@ -11,27 +11,41 @@ Stage 1 established one challenge: **fragmented guest information and difficult 
 
 Evaluation criteria: **BO1 — information continuity; BO2 — scheduling efficiency; BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
 
+
 ### Solution Evaluation & Decision Flow
 
 ```mermaid
-flowchart TB
-    A["Stage 1: Business Problem<br/>Fragmented information & scheduling complexity"]
+flowchart LR
+    A["Stage 1<br/>Business Problem"]
 
-    A --> B["Stage 2: Evaluate Business Opportunities"]
+    B["A1: Strategic Evaluation"]
+    C["A2: Analytics Evaluation"]
 
-    B --> C["A1: Digital Strategy Evaluation"]
-    B --> D["A2: Analytics Opportunity Evaluation"]
+    D["Specialist-Led<br/>AI Personalisation"]
+    E["Demand & Capacity<br/>Forecasting"]
 
-    C --> E["Recommended Strategy:<br/>Specialist-Led AI Personalisation"]
-    D --> F["Prioritised Analytics Initiative:<br/>Treatment Demand & Therapist Capacity Forecasting"]
+    F["Feasibility Gates<br/>Data · Privacy · Operations"]
+    G["Stage 3<br/>Requirements Analysis"]
 
-    E --> G["Feasibility Gates:<br/>Data readiness, privacy, specialist oversight & operational feasibility"]
-    F --> G
+    A --> B
+    A --> C
 
-    G --> H["Stage 3: Requirements Analysis<br/>Separate solution workstreams"]
+    B -->|Recommended strategy| D
+    C -->|Prioritised initiative| E
+
+    D --> F
+    E --> F
+
+    F -->|Subject to validation| G
+
+    classDef selected fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    classDef gate fill:#fff4dc,stroke:#b98a32,color:#684b16
+
+    class D,E selected
+    class F gate
 ```
 
-*The two recommendations address different business priorities. Both remain proposals subject to feasibility validation, not approved or implemented solutions.*
+*Both recommendations remain proposed and subject to feasibility validation. They represent separate but related workstreams.*
 
 
 ## 2. Digital Strategy Evaluation — A1
