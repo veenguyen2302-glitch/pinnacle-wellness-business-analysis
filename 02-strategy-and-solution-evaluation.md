@@ -4,6 +4,13 @@
 **Status:** Proposed strategic and analytics recommendations; not approved investments or implemented solutions.  
 **Previous stage:** [01 — Business Discovery](01-business-discovery.md)
 
+
+## 1. Business Decision Context
+
+Stage 1 established one challenge: **fragmented guest information and difficult coordination between personalised treatment demand and specialist capacity**. Pinnacle needed to prioritise investment without weakening specialist-led service.
+
+Evaluation criteria: **BO1 — information continuity; BO2 — scheduling efficiency; BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
+
 ### Solution Evaluation & Decision Flow
 
 ```mermaid
@@ -26,11 +33,6 @@ flowchart TB
 
 *The two recommendations address different business priorities. Both remain proposals subject to feasibility validation, not approved or implemented solutions.*
 
-## 1. Business Decision Context
-
-Stage 1 established one challenge: **fragmented guest information and difficult coordination between personalised treatment demand and specialist capacity**. Pinnacle needed to prioritise investment without weakening specialist-led service.
-
-Evaluation criteria: **BO1 — information continuity; BO2 — scheduling efficiency; BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
 
 ## 2. Digital Strategy Evaluation — A1
 
