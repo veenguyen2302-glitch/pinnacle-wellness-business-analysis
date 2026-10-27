@@ -13,38 +13,79 @@ Pinnacle's challenge is **fragmented guest information and difficult coordinatio
 
 Options were assessed against **BO1 — information continuity**, **BO2 — scheduling efficiency** and **BO3 — personalised experience**, alongside value, feasibility, data readiness and risk.
 
+
 ### Decision Path
 
 ```mermaid
 flowchart LR
-    P["Business problem<br/>BO1 · BO2 · BO3"]
-    S["Strategic options<br/>Guest experience"]
-    O["Analytics opportunities<br/>Operational decisions"]
-    SP["Specialist-led<br/>AI personalisation"]
-    FC["Treatment demand &<br/>capacity forecasting"]
-    SG["Pilot readiness<br/>Data · Privacy · Specialist review"]
-    FG["Requirements readiness<br/>Booking data · Capacity · Integration"]
+    P["Business Problem<br/>BO1 · BO2 · BO3"]
 
-    P --> S -->|Preferred direction| SP --> SG
-    P --> O -->|First priority| FC --> FG
+    S["Strategic Solution<br/>Evaluation"]
+    A["Operational Analytics<br/>Evaluation"]
 
-    classDef chosen fill:#e8f3ed,stroke:#39805c,color:#173f2c
-    classDef checkpoint fill:#fff4dc,stroke:#b98a32,color:#684b16
-    class SP,FC chosen
-    class SG,FG checkpoint
+    SP["Specialist-Led<br/>AI Personalisation"]
+    FC["Demand & Capacity<br/>Forecasting"]
+
+    SG["Pilot Readiness<br/>Data · Privacy · Specialist Review"]
+    FG["Requirements Readiness<br/>Booking Data · Capacity · Integration"]
+
+    SO["OUTPUT 1<br/>Conditional Personalisation<br/>Pilot Candidate"]
+    FO["OUTPUT 2<br/>Forecasting Prioritised<br/>for Requirements Analysis"]
+
+    P --> S
+    P --> A
+
+    S -->|Preferred direction| SP
+    A -->|First priority| FC
+
+    SP --> SG
+    FC --> FG
+
+    SG -->|Subject to feasibility| SO
+    FG -->|Subject to data validation| FO
+
+    classDef selected fill:#e8f3ed,stroke:#39805c,color:#173f2c
+    classDef gate fill:#fff4dc,stroke:#b98a32,color:#684b16
+    classDef output fill:#e9efff,stroke:#4d72b8,color:#193765
+
+    class SP,FC selected
+    class SG,FG gate
+    class SO,FO output
 ```
 
-*The branches represent distinct decisions and readiness checks—not an integrated delivery programme.*
+*Both outputs are proposed decisions subject to feasibility validation. They represent distinct solution directions, not approved investments or an integrated delivery programme.*
+
+
 
 ## 2. Strategic Solution Evaluation
 
-Two directions were evaluated through SWOT/TOWS and a value–feasibility comparison.
+### Key SWOT Findings
 
-**Preferred: Specialist-Led AI Personalisation.** This direction builds on professional expertise to offer more relevant wellness experiences (**BO3**). It depends on reliable, appropriately accessible guest information (**BO1**) and specialist oversight. Its potential differentiation comes with privacy, workload and organisational-change risks.
+- **Strength:** Specialist wellness expertise supports premium, personalised services.
+- **Weaknesses:** Fragmented guest information and complex appointment scheduling limit service coordination.
+- **Opportunities:** AI personalisation and predictive analytics offer potential service and operational improvements.
+- **Threats:** Rising digital expectations and potential privacy exposure increase the risks of inaction or poorly governed change.
 
-**Alternative: Predictive Demand and Capacity Planning.** This offers more immediate operational focus (**BO2**) through a narrower, potentially more reversible pilot. It offers less guest-facing differentiation and depends on forecast quality.
+### Strategy Development — TOWS
 
-**Strategic decision:** Retain personalisation as the preferred *conditional* direction; test its feasibility through a bounded pilot before expansion. Capacity planning remains a valid, separate operational opportunity.
+Two strategic directions emerged:
+
+**Strategy 1 — Specialist-Led AI Personalisation (Strength × Opportunity)**
+
+Leverage specialist expertise with AI-supported recommendations to strengthen personalised guest experiences (BO3).
+
+**Strategy 2 — Predictive Demand & Capacity Planning (Weakness × Opportunity)**
+
+Use demand forecasting to support therapist allocation and appointment planning (BO2).
+
+### Comparative Evaluation & Decision
+
+Personalisation offers stronger guest-facing differentiation but requires reliable guest information, privacy controls and specialist oversight.
+
+Capacity planning offers more immediate operational value, with a narrower and potentially more reversible implementation scope.
+
+**Decision:** Prioritise specialist-led personalisation as the conditional strategic direction, supported by a bounded pilot. Retain demand and capacity planning as a separate operational opportunity.
+
 
 ## 3. Operational Analytics Opportunity Evaluation
 
