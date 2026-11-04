@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" agent="OpenAI" version="24.7.17" type="device">
+  <diagram id="pinnacle-domain-01" name="01 — Demand &amp; Capacity Domain Model">
+    <mxGraphModel dx="1660" dy="1160" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1660" pageHeight="1160" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="background" value="" style="rounded=0;fillColor=#F8FAFC;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1660" height="1160" as="geometry"/>
+        </mxCell>
+        <mxCell id="headerstripe" value="" style="rounded=0;fillColor=#315F88;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="64" y="62" width="6" height="74" as="geometry"/>
+        </mxCell>
+        <mxCell id="tag" value="PRIMARY SOLUTION • F01–F03 / N02" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#315F88;" vertex="1" parent="1">
+          <mxGeometry x="90" y="44" width="800" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" value="01 — Demand &amp; Capacity Domain Model" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=30;fontStyle=1;fontColor=#162E42;" vertex="1" parent="1">
+          <mxGeometry x="90" y="75" width="1450" height="52" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Primary workstream  /  F01–F03 + N02  /  Proposed operational decision-support concepts" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=14;fontColor=#5C7184;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="1420" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="divider" value="" style="rounded=0;fillColor=#CFD9E3;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="171" width="1450" height="2" as="geometry"/>
+        </mxCell>
+        <mxCell id="scope-pill" value="PROPOSED • CONCEPTUAL" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;fillColor=#E6F1F2;strokeColor=#B4D5D8;fontColor=#1C6C73;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="39" width="239" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="type" target="booking">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA0" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="447" y="242" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB0" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="403" y="241" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl0" value="categorises" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="225" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="type" target="forecast">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA1" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="780" y="240" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB1" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="862" y="241" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl1" value="forecasts type" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="795" y="225" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="review" target="forecast">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="832" y="558"/>
+              <mxPoint x="832" y="337"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA2" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="796" y="541" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB2" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="878" y="320" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl2" value="generates" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="799" y="440" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="review" target="issue">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA3" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="453" y="603" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB3" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="406" y="607" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl3" value="flags" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="586" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="review" target="assessment">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA4" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="792" y="616" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB4" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="875" y="617" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl4" value="evaluates" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="801" y="604" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="review" target="decision">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA5" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="641" y="753" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB5" value="0..1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="641" y="832" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl5" value="records" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="625" y="782" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="forecast" target="assessment">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA6" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1102" y="392" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB6" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1102" y="498" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl6" value="supports" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="433" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="therapist" target="availability">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA7" value="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="335" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB7" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1468" y="498" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl7" value="has" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="408" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;strokeColor=#7B92A6;strokeWidth=1.8;startArrow=none;startFill=0;endArrow=none;endFill=0;fontColor=#54718A;fontSize=12;labelBackgroundColor=#F8FAFC;" edge="1" parent="1" source="assessment" target="availability">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mulA8" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="621" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="mulB8" value="0..*" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontStyle=1;fontColor=#2E5367;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="660" width="46" height="23" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl8" value="uses hours" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=12;fontColor=#4C6F80;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="604" width="120" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="booking" value="BookingRecord" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="67" y="166" width="325" height="198" as="geometry"/>
+        </mxCell>
+        <mxCell id="booking-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;bookingId: Identifier&lt;br&gt;treatmentDate: DateTime&lt;br&gt;durationMinutes: Integer&lt;br&gt;bookingStatus: BookingStatus&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="booking">
+          <mxGeometry x="4" y="43" width="316" height="149" as="geometry"/>
+        </mxCell>
+        <mxCell id="type" value="TreatmentType" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="463" y="166" width="305" height="198" as="geometry"/>
+        </mxCell>
+        <mxCell id="type-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;treatmentTypeId: Identifier&lt;br&gt;name: Text&lt;br&gt;standardDurationMinutes: Integer&lt;br&gt;requiredSpecialisation: Text&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="type">
+          <mxGeometry x="4" y="43" width="296" height="149" as="geometry"/>
+        </mxCell>
+        <mxCell id="forecast" value="DemandForecast" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="901" y="166" width="336" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="forecast-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;forecastId: Identifier&lt;br&gt;periodStart: Date&lt;br&gt;periodEnd: Date&lt;br&gt;expectedBookings: Decimal&lt;br&gt;requiredTreatmentHours: Decimal&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="forecast">
+          <mxGeometry x="4" y="43" width="327" height="161" as="geometry"/>
+        </mxCell>
+        <mxCell id="therapist" value="Therapist" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1322" y="170" width="272" height="153" as="geometry"/>
+        </mxCell>
+        <mxCell id="therapist-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;therapistId: Identifier&lt;br&gt;specialisation: Text&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="therapist">
+          <mxGeometry x="4" y="43" width="263" height="104" as="geometry"/>
+        </mxCell>
+        <mxCell id="issue" value="DataQualityIssue" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="67" y="539" width="325" height="196" as="geometry"/>
+        </mxCell>
+        <mxCell id="issue-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;issueId: Identifier&lt;br&gt;issueType: IssueType&lt;br&gt;status: IssueStatus&lt;br&gt;loggedAt: DateTime&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="issue">
+          <mxGeometry x="4" y="43" width="316" height="147" as="geometry"/>
+        </mxCell>
+        <mxCell id="review" value="PlanningReview" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="468" y="518" width="314" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="review-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;reviewId: Identifier&lt;br&gt;periodStart: Date&lt;br&gt;periodEnd: Date&lt;br&gt;treatmentScope: Text&lt;br&gt;reviewStatus: ReviewStatus&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="review">
+          <mxGeometry x="4" y="43" width="305" height="171" as="geometry"/>
+        </mxCell>
+        <mxCell id="assessment" value="CapacityAssessment" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="901" y="515" width="336" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="assessment-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;assessmentId: Identifier&lt;br&gt;requiredHours: Decimal&lt;br&gt;availableHours: Decimal&lt;br&gt;gapHours: Decimal&lt;br&gt;comparabilityStatus: Text&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="assessment">
+          <mxGeometry x="4" y="43" width="327" height="171" as="geometry"/>
+        </mxCell>
+        <mxCell id="availability" value="TherapistAvailability" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1299" y="519" width="300" height="212" as="geometry"/>
+        </mxCell>
+        <mxCell id="availability-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;availabilityId: Identifier&lt;br&gt;periodStart: Date&lt;br&gt;periodEnd: Date&lt;br&gt;serviceHours: Decimal&lt;br&gt;updatedAt: DateTime&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="availability">
+          <mxGeometry x="4" y="43" width="291" height="163" as="geometry"/>
+        </mxCell>
+        <mxCell id="decision" value="PlanningDecision" style="swimlane;html=1;whiteSpace=wrap;horizontal=1;startSize=40;container=1;collapsible=0;rounded=0;swimlaneFillColor=#FFFFFF;fillColor=#ECF3F8;strokeColor=#315F88;strokeWidth=1.6;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#1A3345;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="468" y="852" width="314" height="191" as="geometry"/>
+        </mxCell>
+        <mxCell id="decision-attrs" value="&lt;div style=&quot;font-family:Arial;font-size:13px;line-height:1.65;color:#33485B&quot;&gt;decisionId: Identifier&lt;br&gt;decisionType: Text&lt;br&gt;rationale: Text&lt;br&gt;recordedAt: DateTime&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;strokeColor=none;fillColor=none;spacingLeft=12;spacingTop=8;" vertex="1" parent="decision">
+          <mxGeometry x="4" y="43" width="305" height="142" as="geometry"/>
+        </mxCell>
+        <mxCell id="note0" value="Decision-support scope: capacity gaps inform a manager; they do not&#10;reserve treatments or change therapist rosters automatically." style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#EDF4F6;strokeColor=#C5D9E0;fontColor=#3B5966;fontFamily=Arial;fontSize=13;align=left;verticalAlign=middle;spacing=16;" vertex="1" parent="1">
+          <mxGeometry x="913" y="860" width="625" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="footer" value="Pinnacle Wellness Resort  |  Stage 04 — Business Process &amp; Solution Modelling  |  Proposed model • not a deployed database" style="text;html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=middle;align=left;strokeColor=none;fillColor=none;fontFamily=Arial;fontColor=#24374A;fontSize=17;spacing=0;fontSize=11;fontColor=#6D8092;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1124" width="1460" height="25" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
