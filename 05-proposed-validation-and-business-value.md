@@ -45,14 +45,14 @@ flowchart LR
 | BO2 (BO1 data dependency) | **F03, N02, US08, AC02/05** | Planning BPMN data-correction/deferral path; `DataQualityIssue` | Are missing/stale sources visible, assigned for resolution and prevented from producing unqualified outputs? | Control proposed; owners/thresholds open |
 | BO2 | **US04, F01–03, AC04, BR01–02** | [Comparison use case](diagrams/03-demand-capacity-use-case.png), `CapacityAssessment`, `PlanningReview` | Are time windows, units and treatment/specialisation compatible? Is a planning shortfall kept distinct from a live slot conflict? | Modelled; comparison rules open |
 | BO1/BO3 | **W01, US09, AC06, BR04** | [Companion BPMN](diagrams/02-personalised-wellness-to-be-bpmn.png), `WellnessProfile` | Is required profile information checked and rechecked before AI submission? | Modelled; mandatory fields open |
-| BO1/BO3 | **W02/W04, US10, AC07, BR04** | [Companion sequence](diagrams/06-wellness-companion-sequence.png), `Recommendation` | Are timeout, invalid output and valid output treated as different outcomes? | Modelled; validity criteria open |
-| BO3 | **W03, US11, AC08, BR03** | [Companion use case](diagrams/04-wellness-companion-use-case.png), `WellnessSchedule` | Are guest-confirmed, expired/unconfirmed and failed states distinct from **treatment booked**? | Modelled; timing rules open |
+| BO1/BO3 | **W02/W04, US10, AC06, BR04** | [Companion sequence](diagrams/06-wellness-companion-sequence.png), `Recommendation` | Is AI service unavailability reported rather than producing a false confirmation? Is invalid output rejected under a proposed additional validation rule? | Modelled; recommendation-validity rules open |
+| BO3 | **W03, US11, AC07, BR03** | [Companion use case](diagrams/04-wellness-companion-use-case.png), `WellnessSchedule` | Are guest-confirmed and expired/unconfirmed schedule states distinct from **treatment booked**? | Modelled; timing rules open |
 
-**Design-review findings requiring correction before UAT:**
+**Design-review findings and open decisions before UAT:**
 
-1. **Acceptance-criteria reference mismatch:** Stage 3 assigns **AC06** to incomplete profiles, **AC07** to AI failure, **AC08** to guest response and expiry, **AC09** to live booking, and **AC10** to conditional specialist review. Some Stage 4 narrative references use earlier AC numbering. Align the Stage 4 traceability labels to the Stage 3 baseline; do not silently redefine them here.
+1. **Acceptance-criteria baseline:** Stage 3 defines **AC06** for incomplete profiles or an unavailable recommendation service; **AC07** for guest confirmation versus expiry of a proposed schedule; and **AC08** for a real reservation, **only if booking enters approved scope**. **AC09 and AC10 are not defined** in the Stage 3 baseline. Invalid AI output handling and conditional specialist-review acceptance need explicit business-rule clarification, not invented AC IDs.
 2. **BPMN notation refinement:** The Companion *Await Updated Profile* branch needs a clearer message-versus-timer waiting/expiry representation; confirm how repeated updates and late responses work.
-3. **Scope gates:** **W05/AC09** (actual booking) and **W06/AC10** (professional review) are conditional extensions, **not implemented capabilities**. **N01/N03/BR06** controls require defined access, consent and privacy rules.
+3. **Scope gates:** **W05/US12/AC08** (actual booking) and **W06/US13/BR05** (conditional professional review; acceptance criteria still to be agreed) are **not implemented capabilities**. **N01/N03/BR06** controls require defined access, consent and privacy rules.
 
 ## 03. Proposed UAT Strategy
 
@@ -85,10 +85,10 @@ flowchart LR
 |---|---|---|---|---|
 | **UAT-B01** | W01 · US09 · AC06 · BR04 | Guest submits incomplete wellness profile | Missing required fields requested; AI submission withheld | Not executed |
 | **UAT-B02** | W01 · AC06 | Guest completes requested profile details | Completeness rechecked before continuing (**proposed path**) | Not executed |
-| **UAT-B03** | W02/W04 · US10 · AC07 | External AI service times out | Failure/unavailable status; no confirmed schedule | Not executed |
-| **UAT-B04** | W02/W04 · AC07 · BR04 | AI returns invalid recommendation content | Output rejected; no unsupported proposed schedule/confirmation | Not executed |
-| **UAT-B05** | W03 · US11 · AC08 · BR03 | Guest confirms a valid **proposed schedule** within the window | Guest-confirmed schedule state; **no treatment booking** | Not executed |
-| **UAT-B06** | W03 · US11 · AC08 · BR03 | Guest does not respond before deadline | Expired/unconfirmed status; no false confirmation | Not executed |
+| **UAT-B03** | W02/W04 · US10 · AC06 · BR04 | External AI service times out | Failure/unavailable status; no confirmed schedule | Not executed |
+| **UAT-B04** | W02/W04 · US10 · BR04 (**proposed validation refinement**) | AI returns invalid recommendation content | Output rejected; no unsupported proposed schedule/confirmation | Not executed |
+| **UAT-B05** | W03 · US11 · AC07 · BR03 | Guest confirms a valid **proposed schedule** within the window | Guest-confirmed schedule state; **no treatment booking** | Not executed |
+| **UAT-B06** | W03 · US11 · AC07 · BR03 | Guest does not respond before deadline | Expired/unconfirmed status; no false confirmation | Not executed |
 
 ### 03.4 Two detailed future test scripts
 
@@ -138,7 +138,7 @@ flowchart LR
 **Before any pilot:**
 
 - [ ] Confirm data ownership, authorised access and representative test datasets.
-- [ ] Resolve open definitions, BPMN notation and Stage 3–4 reference mismatches.
+- [ ] Resolve open definitions, BPMN notation and any remaining cross-stage traceability questions.
 - [ ] Agree business acceptance criteria, participants, priorities and defect severity rules.
 - [ ] Establish safe AI/guest-information controls before testing the exploratory app.
 
@@ -192,7 +192,7 @@ flowchart LR
 | Undefined comparison and freshness rules | Misleading capacity signal | Agreed unit, period, specialisation and refresh criteria | Resolve with operations/data owners |
 | Unproven forecast accuracy | Poor staffing decisions | Out-of-time testing and benchmark comparison | Define evaluation before deployment |
 | Guest-data and AI safeguards undecided | Privacy or recommendation suitability risk | Consent/access rules, output checks, oversight policy | Undertake governance and specialist review |
-| Booking-status ambiguity | Guest may believe a proposed schedule is booked | Separate state definitions and transactional boundary | Keep W05/AC09 behind explicit scope gate |
+| Booking-status ambiguity | Guest may believe a proposed schedule is booked | Separate state definitions and transactional boundary | Keep W05/US12/AC08 behind an explicit scope gate |
 | No KPI baselines | Cannot quantify realised benefit | Current operating measures and comparable periods | Instrument baseline collection before pilot |
 
 ## 08. Final BA Recommendations
@@ -203,7 +203,7 @@ flowchart LR
 
 ### B — Exploratory personalisation workstream
 
-**Retain the Wellness Companion as a separate, conditional concept.** Validate the guest journey and permissible information use before any build decision. Recommendation suitability, AI failure handling, guest-confirmation semantics, and optional professional review (**W06/AC10**) or live booking (**W05/AC09**) require explicit policy and scope decisions.
+**Retain the Wellness Companion as a separate, conditional concept.** Validate the guest journey and permissible information use before any build decision. Recommendation suitability and AI failure handling (**AC06/BR04**), guest-confirmation semantics (**AC07/BR03**), optional professional review (**W06/US13/BR05**; acceptance criteria to be agreed) and live booking (**W05/US12/AC08**, conditional scope) require explicit policy and scope decisions.
 
 ### Project completion versus future delivery
 
